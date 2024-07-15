@@ -1,4 +1,3 @@
-'use client'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Playfair_Display } from 'next/font/google'
@@ -20,8 +19,8 @@ async function BlogPage({params:{id}}:{params:{id:string}}){
     const data = await blogData.json()
 
     return(
-        <div id="BlogpageMainContainer" className={`BlogpageMain ${Playfair.className} flex flex-col items-center bg-white w-screen`}>
-            <div className="container">
+        <div id="BlogpageMainContainer" className={`BlogpageMain ${Playfair.className} flex flex-col items-center p-4 w-screen md:max-w-5xl`}>
+            <div className="container p-2 text-wrap">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{data.blogs?.text}</ReactMarkdown>
             </div>
         </div>

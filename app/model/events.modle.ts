@@ -1,28 +1,21 @@
 import mongoose from "mongoose";
 
-const jobsSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
     thumbnailurl: {
         type: String,
         required: [true, "Please provide a thumbnailurl"],
     },
-    role: {
+    name: {
         type: String,
-        required: [true, "Please provide a role"],
-    },
-    company: {
-        type: String,
-        required: [true, "Please company name"],
+        required: [true, "Please provide a name"],
     },
     location: {
         type:String,
-    },
-    department:{
-        type:String,
-        required: [true, "Please company department"],
+        required: [true, "Please provide a location"],
     },
     url: {
         type: String,
-        required: [true, "Please job url"],
+        required: [true, "Please event url"],
     },
     submitter:{
         type: String,
@@ -39,6 +32,6 @@ const jobsSchema = new mongoose.Schema({
     submittedDate: Date,
 })
 
-const Jobs = mongoose.models.jobs || mongoose.model("jobs", jobsSchema);
+const Events = mongoose.models.events || mongoose.model("events", eventSchema);
 
-export default Jobs;
+export default Events;
