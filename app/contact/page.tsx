@@ -2,6 +2,8 @@
 
 import AlertMessage from "@/components/alertMessage/AlertMessage";
 import { useState } from "react";
+import Button from '@mui/material/Button';
+import {TextField, Paper, Box} from '@mui/material';
 
 function Contacts() {
   const [message, setMessage] = useState("");
@@ -61,7 +63,10 @@ function Contacts() {
   }
   return (
     <>
-      <div className="contactsMain flex min-h-screen md:mt-20 md:content-centre md:max-w-5xl">
+      <Box sx={{
+        minHeight:"100vh",
+        marginTop:{md:"20rem"}
+      }}>
         <div className="flex flex-col md:flex-row">
           <div className="disclaimer p-10 md:p-0 md:max-w-5xl">
             <div>Submit the form for</div>
@@ -102,64 +107,45 @@ function Contacts() {
               </p>
             </div>
           </div>
-          <div className="contactForm md:container md:flex md:justify-center md:ml-10">
-            <form autoComplete="off">
-              <div className="md:w-[30rem]">
-                <div className="bg-background-1 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <Paper elevation={0} sx={{
+                  backgroundColor:'secondary.light',
+                  padding:"40px",
+                  borderRadius:{md:"10px"}
+                }}>
+                <Box >
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      First name
-                      <span className="star text-hazard">*</span>
-                    </label>
-                    <input
-                      value={firstname}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="name"
-                      type="text"
-                      placeholder="John"
-                    />
+                    <TextField
+                    sx={{
+                      color:"text.primary"
+                    }} fullWidth onChange={(e) => setFirstName(e.target.value)} id="outlined-basic" label="First name" variant="standard" />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Last name
-                      <span className="star text-hazard">*</span>
-                    </label>
-                    <input
-                      value={lastname}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="name"
-                      type="text"
-                      placeholder="Denver"
-                    />
+                    <TextField
+                    sx={{
+                      color:"text.primary"
+                    }} fullWidth onChange={(e) => setLastName(e.target.value)} id="outlined-basic" label="Last name" variant="standard" />
                   </div>
                   <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Email
-                      <span className="star text-hazard">*</span>
-                    </label>
-                    <input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                      id="email"
-                      type="text"
-                      placeholder="john@gmail.com"
-                    />
+                    <TextField
+                    sx={{
+                      color:"text.primary"
+                    }} fullWidth onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email *" variant="standard" />
                     <p className="text-red-500 text-xs italic">
                       Please enter email.
                     </p>
                   </div>
                   <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Message
-                      <span className="star text-hazard">*</span>
-                    </label>
-                    <textarea
-                      value={description}
+                    <TextField
+                    sx={{
+                      color:"text.primary"
+                    }}
+                      id="filled-multiline-flexible"
+                      label="Mesage"
+                      multiline
                       onChange={(e) => setDescription(e.target.value)}
-                      className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                      maxRows={4}
+                      variant="outlined"
+                      fullWidth
                     />
                     <p className="text-red-500 text-xs italic">
                       Enter description
@@ -186,19 +172,19 @@ function Contacts() {
                     </p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <button
+                    <Button
                       onClick={handleSubmit}
-                      className="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      variant="contained"
+                      sx={{color:"background.default"}}
                     >
                       Submit
-                    </button>
+                    </Button>
                   </div>
-                </div>
-              </div>
-            </form>
-          </div>
+                </Box>
+          </Paper>
+            
         </div>
-      </div>
+      </Box>
       {alert && (
         <AlertMessage
           message={message}

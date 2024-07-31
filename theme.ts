@@ -30,27 +30,27 @@ const roboto = Roboto_Flex({
 const PALLETTE = {
   primary: {
     light: "",
-    main: "#2f27ce",
+    main: "#a75959",
     dark: "",
     contrastText: "",
   },
   text:{
-    primary:"#050315"
+    primary:"#150b0b"
   },
   secondary: {
-    light: "",
-    main: "#dedcff",
+    light: "#eaedeb",
+    main: "#a9d1c2",
     dark: "",
     contrastText: "",
   },
   info:{
     light:"",
-    main: "#433bff",
+    main: "#829fbd",
     dark: "",
     contrastText: "",
   },
   background:{
-    default:"#fbfbfe"
+    default:"#faf5f5"
   }
 }
 

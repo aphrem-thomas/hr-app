@@ -28,6 +28,7 @@ export default function RootLayout({
        <AppRouterCacheProvider>
        <ThemeProvider theme={theme}>
         <Box bgcolor={"background.default"} width={"100%"} sx={{
+          backgroundImage:`url(./pattern-randomized.svg)`,
           display:"flex",
           flexDirection:"column",
           alignItems:"center"
