@@ -22,10 +22,10 @@ async function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-    <div className="headerImage w-full top-0 left-0 absolute z-20">
+    {/* <div className="headerImage w-full top-0 left-0 absolute z-20">
       <img className="h-48 w-full object-cover" src='/work.jpg'/>
-    </div>
-    <div className="bg-bg-jobs w-full min-h-screen flex flex-col content-center items-center z-20">
+    </div> */}
+    <div className=" w-full min-h-screen flex flex-col content-center items-center z-20">
     <div className="flex w-full h-24 justify-center items-center">
       <a href="/addjob">
         <button className='w-40 h-8 flex justify-center items-center text-xl border text-text py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline'>Add Job</button>

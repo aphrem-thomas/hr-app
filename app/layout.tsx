@@ -14,7 +14,7 @@ const Barlow = Barlow_Condensed({
   variable:'--barlow-font'
 })
 export const metadata: Metadata = {
-  title: 'Ranjith Mathew',
+  title: 'sava HR',
 }
 
 export default function RootLayout({

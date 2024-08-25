@@ -44,7 +44,7 @@ const PALLETTE = {
     contrastText: "",
   },
   info:{
-    light:"",
+    light:"#e9d6d6",
     main: "#829fbd",
     dark: "",
     contrastText: "",
